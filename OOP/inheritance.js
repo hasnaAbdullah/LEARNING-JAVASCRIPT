@@ -1,80 +1,47 @@
-class User {
-    constructor(name, age, email, phone, address) {
-      this.name = name;
-      this.age = age;
-      this.email = email;
-      this.phone = phone;
-      this.address = address;
-    }
+class Player {
+  #name;
+  #age;
+  #skill;
+  #experience;
+
+  constructor(name, age, skill, experience) {
+    this.#name = name;
+    this.#age = age;
+    this.#skill = skill;
+    this.#experience = experience;
   }
-  
-  // moderator
-  class Moderator {
-    #name;
-    #age;
-    #email;
-    #phone;
-    #address;
-    constructor(name, age, email, phone, address) {
-      this.#name = name;
-      this.#age = age;
-      this.#email = email;
-      this.#phone = phone;
-      this.#address = address;
-    }
-    getAddress() {
-      return this.#address;
-    }
+
+  getFullInformation() {
+    return `${this.#name} is ${this.#age} years old. He is ${
+      this.#skill
+    } and he has ${this.#experience} years experience `;
   }
-  const moderator1 = new Moderator(
-    "Hasan Nayeem",
-    26,
-    "mdhasanayeem@gmail.com",
-    "01861470639",
-    "ctg, Bangladesh"
-  );
-  // user 02
-  const moderator2 = new Moderator(
-    "Abul Nayeem",
-    36,
-    "abulnayeem@gmail.com",
-    "018614704539",
-    "Dhaka, Bangladesh"
-  );
-  // user 03
-  const moderator3 = new Moderator(
-    "Abu Nayeem",
-    30,
-    "abul@gmail.com",
-    "018614704550",
-    "Rongpur, Bangladesh"
-  );
-  
-  console.log(moderator1.getAddress());
-  
-  /*====> following objects are  user <====*/
-  // user 01
-  const user1 = new User(
-    "Hasan Nayeem",
-    26,
-    "mdhasanayeem@gmail.com",
-    "01861470639",
-    "ctg, Bangladesh"
-  );
-  // user 02
-  const user2 = new User(
-    "Abul Nayeem",
-    36,
-    "abulnayeem@gmail.com",
-    "018614704539",
-    "Dhaka, Bangladesh"
-  );
-  // user 03
-  const user3 = new User(
-    "Abu Nayeem",
-    30,
-    "abul@gmail.com",
-    "018614704550",
-    "Rongpur, Bangladesh"
-  );
-  
+}
+
+class Cricketer extends Player {
+  #centuries;
+  constructor(name, age, skill, experience, centuries) {
+    super(name, age, skill, experience);
+    this.#centuries = centuries;
+  }
+
+  getCenturies() {
+    return `${this.name} has ${this.#centuries} in his entire career`;
+  }
+}
+
+const cricketer1 = new Cricketer('sakib', 35, "all-rounder", 15);
+console.log(cricketer1.getFullInformation())
+
+
+/* footballer class */
+class Footballer extends Player {
+  #goals;
+  constructor(name, age, skill, experience, goals) {
+    super(name, age, skill, experience);
+    this.goals = goals;
+  }
+  getCenturies() {
+    return `${this.name} has ${this.#goals} in his entire career`;
+  }
+}
