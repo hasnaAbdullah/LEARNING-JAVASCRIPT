@@ -50,7 +50,7 @@ const moderator3 = new Moderator(
   "Rongpur, Bangladesh"
 );
 
-console.log(moderator1.getAddress());
+// console.log(moderator1.getAddress)
 
 /*====> following objects are  user <====*/
 // user 01
@@ -77,3 +77,4 @@ const user3 = new User(
   "018614704550",
   "Rongpur, Bangladesh"
 );
+export { User , Moderator};
